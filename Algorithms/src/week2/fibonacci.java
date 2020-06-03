@@ -7,12 +7,12 @@ public class fibonacci {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
-	     double[] arr = new double[n+1];
+	     long[] arr = new long[n+1];
 		System.out.println(fib(n,arr));
 
 	}
 	
-	public static double fib(int n,  double arr[]) {
+	public static long fib(int n,  long arr[]) {
 		if(n<=1) {
 			return n;
 		}
