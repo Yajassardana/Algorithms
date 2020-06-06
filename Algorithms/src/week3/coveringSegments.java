@@ -10,16 +10,15 @@ public class coveringSegments {
 		   Arrays.sort(segments);
 //		   System.out.println(Arrays.toString(segments));
 	        int[] points = new int[segments.length];
-	        for (int i = 0,j=0; i < segments.length; i++) {
-	            points[j] = segments[i].end;
-	            if(i==segments.length-1)
-	            	break;
-	            while(points[j]<=segments[i+1].end&&points[j]>=segments[i+1].start) {
-	            	i++;
-	            	if(i==segments.length-1)
-		            	break;
-	            }
+	        int point = segments[0].end;
+	        points[0]=point;
+	        for (int i = 1,j=1; i < segments.length; i++) {
+	            if(point>segments[i].end||point<segments[i].start) {
+	            	point=segments[i].end;
+	            points[j]=point;
 	            j++;
+	            	
+	            }
 	        }
 	        return points;
 	    }
